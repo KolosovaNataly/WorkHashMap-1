@@ -1,5 +1,7 @@
+
 import java.util.HashMap;
 import java.util.Map;
+
 
 public class Main {
 
@@ -11,10 +13,10 @@ public class Main {
     public static void main(String[] args) {
         Map<Character, Integer> map = new HashMap<>();
         for (char ch : text.toCharArray()) {
-            if (map.containsKey(ch)) {
+            if (ch != ' ' && map.containsKey(ch)) {
                 int a = map.get(ch) + 1;
                 map.put(ch, a);
-            } else {
+            } else if (ch != ' ') {
                 map.put(ch, 1);
             }
         }
@@ -34,3 +36,5 @@ public class Main {
         System.out.println(map);
     }
 }
+
+
